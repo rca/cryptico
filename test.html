@@ -31,6 +31,10 @@
         print("Matt's public key string:");
         print(MattsPublicKeyString);
         
+		print("Matt's key JSON:");
+		var MattsJSONKey = cryptico.b256to64(JSON.stringify(MattsRSAkey.toJSON()));
+        print(MattsJSONKey);  
+		
         var PlainText = "Matt, I need you to help me with my Starcraft strategy.";
         
         print("Sam's message: " + PlainText);
@@ -40,6 +44,8 @@
         print("The encrypted message:");
         print(EncryptionResult.cipher);        
         
+		var MattsRSAkey2 = RSAKey.parse(cryptico.b64to256(MattsJSONKey));
+		
         var DecryptionResult = cryptico.decrypt(EncryptionResult.cipher, MattsRSAkey);
         
         print("The decrypted message:");
