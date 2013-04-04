@@ -46,7 +46,7 @@
         
 		var MattsRSAkey2 = RSAKey.parse(cryptico.b64to256(MattsJSONKey));
 		
-        var DecryptionResult = cryptico.decrypt(EncryptionResult.cipher, MattsRSAkey);
+        var DecryptionResult = cryptico.decrypt(EncryptionResult.cipher, MattsRSAkey2);
         
         print("The decrypted message:");
         print(DecryptionResult.plaintext);        
